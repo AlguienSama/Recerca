@@ -129,6 +129,15 @@ app.get('/app', (req, res) => {
   });
 });
 
+app.delete('/apps/:filename', (req, res) => {
+  gfs.remove({_id: req.params.id, root: 'uploadApp'}, (err, gridStore) => {
+    if(err) {
+      return res.status(404).json({err: err });
+    }
+    res.redirect('/profile/:name')
+  });
+});
+
 
 
 const PORT = process.env.PORT || 4000;
