@@ -6,8 +6,6 @@ const crypto = require('crypto');
 
 const Schema = mongoose.Schema;
 
-const Post = mongoose.model('Post');
-const User = mongoose.model('User');
 
 const path = require('path');
 
