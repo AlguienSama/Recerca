@@ -1,0 +1,20 @@
+<!-- PERFIL D'USUARI -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/metacss %>
+    <title>RESEARCH PROJECT</title>
+  </head>
+  <body>
+    <% include ./partials/navbar %>
+    <div class="container border border-dark rounded mt-3" style="background-color: #c2c2c2">
+      <h1 class="mt-4">USER PROFILE</h1>
+      <p class="lead mb-3"><%= user.name %></p>
+      <a href="/users/logout" class="btn btn-secondary">Logout</a>
+      <br>
+      <br>
+      <% include ./partials/footer %>
+    </div>
+  </body>
+</html>

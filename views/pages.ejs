@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include ./partials/metacss %>
+    <title>Proba</title>
+  </head>
+  <body style="background-color: #f3f3f3;">
+    <% include ./partials/navbar %>
+    <div class="container-fluid px-5 ">
+      <div class="d-flex justify-content-center flex-wrap text-center">
+        <div class="col-6 col-md-7 col-ms-8" style="border: 5px solid #f3f3f3; border-radius: 10px;">
+          <div class="center-block">
+            <div class="d-block row mt-3 text-black border border-dark rounded text-center" style="background-color: #c2c2c2">
+              <% if(files){ %>
+                <% files.forEach(function() { %>
+                  <div class="card card-body">
+                    <% if(files.isHTML) { %>
+                      <iframe src="app/<%= files.filename %>" width="400" height="400"></iframe>
+                    <% } else { %>
+                      <% files.filename %>
+                    <% } %>
+                  </div>
+                <% }) %>
+              <% } else { %>
+                <p>No files</p>
+              <% } %>
+              <article class="">
+                <div class="container">
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 col-ms-2 d-flex" style="max-width: 400px; border: 5px solid #f3f3f3; border-radius: 10px;">
+          <div class="center-block w-100">
+            <% include ./partials/sidebar %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% include ./partials/footer %>
+  </body>
+</html>

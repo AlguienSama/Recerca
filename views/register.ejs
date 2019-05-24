@@ -1,0 +1,80 @@
+<!-- REGISTER -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <% include ./partials/metacss %>
+    <title>Register</title>
+  </head>
+  <body>
+    <% include ./partials/navbar %>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+          <div class="card card-body">
+            <h1 class="text-center mb-3">
+              <i class="fas fa-user-plus"></i> Register </h1>
+            <% include ./partials/messages %>
+
+            <form action="/users/register" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="name"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  placeholder="Name"
+                  value="<%= typeof name != 'undefined' ? name : '' %>"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="E-mail"
+                  value="<%= typeof email != 'undefined' ? email : '' %>"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="Password"
+                  value="<%= typeof password != 'undefined' ? password : '' %>"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password2">Password Confirm</label>
+                <input
+                  type="password"
+                  id="password2"
+                  name="password2"
+                  class="form-control"
+                  placeholder="Password Confirm"
+                  value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Create Account
+              </button>
+            </form>
+
+            <p class="lead mt-4">Already a member? <a href="/users/login">Login</a></p>
+          </div>
+        </div>
+      </div>
+      <% include ./partials/footer %>
+    </div>
+  </body>
+</html>

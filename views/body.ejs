@@ -1,0 +1,20 @@
+<!-- CONTINGUT PRINCIPAL -->
+
+<div class="d-block row mt-3 text-black border border-dark rounded text-center" style="background-color: #c2c2c2">
+  <h1>WELCOME!</h1>
+  <div class="col-md-11 mt-3 m-auto">
+    <% posts.forEach(post => { %>
+      <div class="post-preview mb-3 border border-dark rounded w-100">
+        <a href="/app/<%= post.id %>" class="list-group-item">
+          <h4 class="list-group-item-heading"><%= post.nomPost %></h4>
+          <div class="">
+            <% post._id %>
+          </div>
+          <p class="list-group-item-text"><%= post.descriptionPost %></p>
+        </a>
+      </div>
+    <% }) %>
+    <br>
+
+  </div>
+</div>
