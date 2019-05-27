@@ -57,12 +57,5 @@ router.get('/contact', (req, res) => res.render('contact'));
 
 
   // Route profile
-const User = require('../models/user');
 
-app.get('/profile/:name', (req, res) => {
-  const name = req.params.name;
-  User.findOne({ name: name }, (err, user) => {
-    res.json(user);
-  })
-});
  module.exports = router;

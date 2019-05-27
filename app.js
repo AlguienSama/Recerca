@@ -79,6 +79,7 @@ app.use(function(req, res, next) {
 // Routes
 app.use('/', require('./routes/index.js'));
 app.use('/users', require('./routes/users.js'));
+app.use('/profile', require('./routes/profile.js'));
 
 // gfs
 app.get('/appss', (req, res) => {
@@ -86,7 +87,7 @@ app.get('/appss', (req, res) => {
     // Check if files exist
     if(!files || files.length === 0){
       return res.status(404).json({
-        err: 'No files exist.'
+        err: 'No files exists'
       });
     }
     return res.json(files);

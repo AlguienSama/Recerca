@@ -10,7 +10,17 @@ const PostSchema = new Schema({
   },
   descriptionPost: {
     type: String
+  },
+  authorPost: {
+    type: String,
+    required: true
+  },
+  appID: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'uploadApp.files'
   }
+
+
 });
 
 const Post = mongoose.model('Post', PostSchema);

@@ -19,10 +19,6 @@ const storage = new GridFsStorage({
         }
         const filename = buf.toString('hex');
         const fileInfo = {
-          id: {
-            type: Date,
-            default: Date.now
-          },
           filename: filename,
           bucketName: 'uploadApp'
         };
