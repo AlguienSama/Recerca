@@ -5,6 +5,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const passport = require('passport');
+const https = require('https');
+const fs = require('fs');
 
 const mongoose = require('mongoose');
 const multer = require('multer');
@@ -141,6 +143,15 @@ app.delete('/apps/:filename', (req, res) => {
 
 
 
+// SSL config
+/* const options = {
+  key: fs.readFileSync('/etc/ssl/private/apache-selfsigned.key'),
+  cert: fs.readFileSync('/etc/ssl/certs/apache-selfsigned.crt')
+};
+https.createServer(options, app).listen(4040, console.log(`Server https port: 4040`));
+*/
+
+//Port
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

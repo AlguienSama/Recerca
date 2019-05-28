@@ -43,9 +43,9 @@ module.exports = function(passport) {
 };
 
 
-  app.get('/:name', (req, res) => {
-    const name = req.params.name;
-    User.findOne({ name: name }, (err, user) => {
-      res.json(user);
-    })
-  });
+app.get('/:name', (req, res) => {
+  const name = req.params.name;
+  User.findOne({ name: name }, (err, user) => {
+    res.json(user);
+  })
+});
